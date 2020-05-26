@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="event_item_title">18sp</dimen>
+    <dimen name="event_item_overview">14sp</dimen>
+    <dimen name="event_item_image_width">150dp</dimen>
+    <dimen name="event_item_image_height">100dp</dimen>
+    <dimen name="no_events_to_show">30sp</dimen>
+</resources>

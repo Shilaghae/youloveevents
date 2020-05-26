@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">You Love Events</string>
+    <string name="event_sale">Sale from %1$s to %2$s </string>
+</resources>
