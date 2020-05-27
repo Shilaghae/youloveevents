@@ -1,6 +1,13 @@
-package com.youloveevents.main
+package com.youloveevents
 
 import com.youloveevents.database.EventsDBEntity
+import com.youloveevents.main.Event
+import com.youloveevents.main.EventDate
+import com.youloveevents.main.EventImage
+import com.youloveevents.main.EventImage.Data
+import com.youloveevents.main.EventImage.None
+import com.youloveevents.main.EventPromoter
+import com.youloveevents.main.EventSale
 import com.youloveevents.network.ApiDiscovery
 import com.youloveevents.network.ApiEventDate
 import com.youloveevents.network.ApiEventImage
@@ -39,8 +46,8 @@ class EventsMapper @Inject constructor(
                 url = event.url.toString(),
                 promoterName = event.promoter.name,
                 promoterDescription = event.promoter.description,
-                smallImage = if (event.smallImage is EventImage.Data) event.smallImage.uri.toString() else "",
-                bigImage = if (event.bigImage is EventImage.Data) event.bigImage.uri.toString() else "",
+                smallImage = if (event.smallImage is Data) event.smallImage.uri.toString() else "",
+                bigImage = if (event.bigImage is Data) event.bigImage.uri.toString() else "",
                 startToSale = if (event.sale is EventSale.Data) event.sale.start else "",
                 endToSale = if (event.sale is EventSale.Data) event.sale.end else "",
                 date = if (event.date is EventDate.Data) event.date.start else "",
@@ -56,8 +63,8 @@ class EventsMapper @Inject constructor(
         return Event(
                 id = event.id,
                 name = event.name,
-                smallImage = if (event.smallImage != null) EventImage.Data(urlUtil.toUri(event.smallImage)) else EventImage.None,
-                bigImage = if (event.bigImage != null) EventImage.Data(urlUtil.toUri(event.bigImage)) else EventImage.None,
+                smallImage = if (event.smallImage != null) Data(urlUtil.toUri(event.smallImage)) else None,
+                bigImage = if (event.bigImage != null) Data(urlUtil.toUri(event.bigImage)) else None,
                 url = urlUtil.toUri(event.url),
                 promoter = EventPromoter(event.promoterName, event.promoterDescription),
                 sale = getEventSale(event.startToSale, event.endToSale),
@@ -82,19 +89,19 @@ class EventsMapper @Inject constructor(
     private fun getSmallImage(images: List<ApiEventImage>?): EventImage {
         images?.forEach {
             if (it.ratio == "16_9" && it.width <= 100 && it.height <= 100) {
-                return EventImage.Data(urlUtil.toUri(it.url))
+                return Data(urlUtil.toUri(it.url))
             }
         }
-        return EventImage.None
+        return None
     }
 
     private fun getBigImage(images: List<ApiEventImage>?): EventImage {
         images?.forEach {
             if (it.ratio == "3_2" && (it.width in 200..400) && (it.height in 200..400)) {
-                return EventImage.Data(urlUtil.toUri(it.url))
+                return Data(urlUtil.toUri(it.url))
             }
         }
-        return EventImage.None
+        return None
     }
 
     private fun getEventSale(date: ApiEventSalePublic?): EventSale {

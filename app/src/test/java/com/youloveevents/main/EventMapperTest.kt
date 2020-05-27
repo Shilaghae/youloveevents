@@ -16,6 +16,7 @@ import com.youloveevents.network.ApiEvents
 import org.mockito.junit.MockitoJUnit
 import com.google.common.truth.Truth.assertThat
 import com.nhaarman.mockito_kotlin.any
+import com.youloveevents.EventsMapper
 import com.youloveevents.network.ApiPage
 import com.youloveevents.util.UrlUtil
 

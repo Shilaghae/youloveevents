@@ -1,7 +1,6 @@
 package com.youloveevents.main
 
 import com.youloveevents.EventConverter
-import com.youloveevents.error.SimpleDomainException
 import com.youloveevents.util.Lce
 import io.reactivex.Observable
 import javax.inject.Inject

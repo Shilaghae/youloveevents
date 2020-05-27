@@ -1,5 +1,6 @@
 package com.youloveevents.main
 
+import com.youloveevents.EventsMapper
 import com.youloveevents.database.EventsDatabase
 import com.youloveevents.network.ApiInterface
 import io.reactivex.Observable

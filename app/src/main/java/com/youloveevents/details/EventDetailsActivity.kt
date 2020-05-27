@@ -37,7 +37,6 @@ class EventDetailsActivity : BaseActivity() {
     }
 
     private fun reload(uiModel: Lce<UiEvent>) {
-
         when (uiModel) {
             is Lce.Data -> {
                 if (uiModel.data.bigImage is UiEventImage.Data) {

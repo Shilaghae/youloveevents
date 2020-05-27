@@ -9,7 +9,7 @@ import com.youloveevents.database.EventDao
 import com.youloveevents.database.EventsDBEntity
 import com.youloveevents.database.EventsDatabase
 import com.youloveevents.main.Event
-import com.youloveevents.main.EventsMapper
+import com.youloveevents.EventsMapper
 import io.reactivex.observers.TestObserver
 import org.junit.Before
 import org.junit.Rule

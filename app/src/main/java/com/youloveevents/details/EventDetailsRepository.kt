@@ -2,7 +2,7 @@ package com.youloveevents.details
 
 import com.youloveevents.database.EventsDatabase
 import com.youloveevents.main.Event
-import com.youloveevents.main.EventsMapper
+import com.youloveevents.EventsMapper
 import io.reactivex.Single
 import javax.inject.Inject
 
