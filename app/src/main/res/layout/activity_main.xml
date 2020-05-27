@@ -18,9 +18,24 @@
 
     <ProgressBar
         android:id="@+id/activity_main_events_list_progressBar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/progress_bar"
+        android:layout_height="@dimen/progress_bar"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activity_main_events_emptyList_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:text="@string/empty_event_list"
+        android:textSize="@dimen/no_events_to_show"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

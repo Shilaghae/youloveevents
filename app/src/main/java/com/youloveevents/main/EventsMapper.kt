@@ -1,6 +1,5 @@
 package com.youloveevents.main
 
-import android.net.Uri
 import com.youloveevents.database.EventsDBEntity
 import com.youloveevents.network.ApiDiscovery
 import com.youloveevents.network.ApiEventDate
@@ -50,10 +49,10 @@ class EventsMapper @Inject constructor(
     }
 
     fun mapDbEvents(events: List<EventsDBEntity>): List<Event> {
-        return events.map { map(it) }
+        return events.map { mapDbEvent(it) }
     }
 
-    private fun map(event: EventsDBEntity): Event {
+    fun mapDbEvent(event: EventsDBEntity): Event {
         return Event(
                 id = event.id,
                 name = event.name,

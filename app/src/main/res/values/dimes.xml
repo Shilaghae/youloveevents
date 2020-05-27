@@ -5,4 +5,5 @@
     <dimen name="event_item_image_width">150dp</dimen>
     <dimen name="event_item_image_height">100dp</dimen>
     <dimen name="no_events_to_show">30sp</dimen>
+    <dimen name="progress_bar">50dp</dimen>
 </resources>

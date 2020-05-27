@@ -9,7 +9,7 @@ import androidx.room.Query
 interface EventDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(asteroid : EventsDBEntity)
+    fun insert(event : EventsDBEntity)
 
     @Query("DELETE FROM events_table")
     fun deleteAllEvents()
@@ -17,6 +17,7 @@ interface EventDao {
     @Query("SELECT * FROM events_table")
     fun getAllEvents() : List<EventsDBEntity>
 
-//    @Query("SELECT * FROM events_table WHERE closeApproachDate >= :start AND closeApproachDate <= :end ORDER BY closeApproachDate ASC")
-//    fun getInBetweenDate(start: Long, end: Long) : List<EventsDBEntity>
+
+    @Query("SELECT * FROM events_table WHERE id = :id")
+    fun getEvent(id: String) : EventsDBEntity
 }

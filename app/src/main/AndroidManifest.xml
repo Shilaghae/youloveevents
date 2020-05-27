@@ -7,25 +7,37 @@
     <!-- For general access to the internet from the app. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
-        android:usesCleartextTraffic="true"
         android:name=".base.YouLoveEventsApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup">
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup"
+        >
 
         <activity
             android:name=".main.EventListActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".details.EventDetailsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"
+            />
     </application>
 
 </manifest>

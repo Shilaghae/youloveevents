@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">You Love Events</string>
     <string name="event_sale">Sale from %1$s to %2$s </string>
+    <string name="event_promoter">Promoter: %1s</string>
+    <string name="event_promoter_description">Promoter description: %1s</string>
+    <string name="error_check_your_connection">An error occurred, check your connection</string>
+    <string name="empty_event_list">No events</string>
 </resources>
