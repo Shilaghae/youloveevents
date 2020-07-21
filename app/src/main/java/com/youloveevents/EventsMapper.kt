@@ -118,7 +118,11 @@ class EventsMapper @Inject constructor(
 
     private fun getEventDate(date: ApiEventDate?): EventDate {
         return date?.let {
-            EventDate.Data(it.start.dateTime, it.timezone)
+            if (it.start != null && it.start!!.dateTime != null) {
+                EventDate.Data(it.start!!.dateTime!!, it.timezone)
+            } else {
+                EventDate.None
+            }
         } ?: EventDate.None
     }
 }

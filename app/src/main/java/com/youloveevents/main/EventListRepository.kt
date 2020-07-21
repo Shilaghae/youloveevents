@@ -1,5 +1,6 @@
 package com.youloveevents.main
 
+import android.util.Log
 import com.youloveevents.EventsMapper
 import com.youloveevents.database.EventsDatabase
 import com.youloveevents.network.ApiInterface
@@ -19,7 +20,11 @@ class EventListRepository @Inject constructor(
                 .doOnNext { saveEventsIntoDb(it) }
                 .doOnNext { getEventsFromDb() }
                 .startWith(getEventsFromDb())
-                .onErrorReturn { getEventsFromDb() }
+                .onErrorReturn {
+                    it.printStackTrace()
+                    Log.d(this::class.java.name, it.message!!)
+                    getEventsFromDb()
+                }
     }
 
     private fun saveEventsIntoDb(events: List<Event>) {

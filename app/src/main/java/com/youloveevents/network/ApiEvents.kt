@@ -33,12 +33,12 @@ class ApiEventImage(
 )
 
 class ApiEventDate(
-    var start: ApiEventStartDate,
-    val timezone: String
+    var start: ApiEventStartDate?,
+    val timezone: String?
 )
 
 class ApiEventStartDate(
-    val dateTime: String
+    val dateTime: String?
 )
 
 class ApiEventPromoter(

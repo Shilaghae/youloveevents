@@ -29,5 +29,5 @@ sealed class EventSale {
 
 sealed class EventDate {
     object None : EventDate()
-    data class Data(val start: String, val timezone: String) : EventDate()
+    data class Data(val start: String, val timezone: String?) : EventDate()
 }
