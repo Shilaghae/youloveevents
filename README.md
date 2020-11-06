@@ -1,4 +1,6 @@
 # youloveevents
+
+
 You love events is a sample project that show events and uses the public api of ticketmaster. In order to run the app you will need to create a keystore.properties file with the folllowing string:
 
 theTicketmasterKey="1xBl3eTZ5bYDuBU0GMJnmeAf8YTRGNCA"
